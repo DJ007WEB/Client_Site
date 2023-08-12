@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  /* border: 2px solid red; */
+  font-size: 2.5vmin;
+  overflow-x: hidden;
+}
+
+.header {
+  height: 8vw;
+  width: 100%;
+  background-color: rgba(153, 173, 201, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw 3vw;
+}
+
+.nav-list {
+  display: flex;
+  gap: 3vw;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: 0.5s;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: brown;
+}
+
+img[alt="logo"] {
+  height: 10vh;
+  border-radius: 50%;
+}
+
+/* MOBILE NAV BUTTON */
+
+.mobile-navbar-btn {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-navbar-icon {
+    /* font-size: 5vw; */
+    color: #212529;
+}
+
+.fa-x {
+    display: none;
+}
+
+
+/* 
+    ============================================
+
+                RESPONSIVENESS
+
+    ============================================
+
+*/
+
+@media (max-width: 980px) {
+  .header {
+    height: 15vw;
+  }
+
+  .mobile-navbar-btn {
+    display: none;
+}
+
+}
+
+@media (max-width: 500px) {
+  .header {
+    height: 25vw;
+    padding: 0 15vw;
+    position: relative;
+  }
+
+  .nav-bar {
+    /* display: none; */
+    height: 100vh;
+    background-color: rgba(153, 173, 201, 0.4);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    font-size: 5vw;
+}
+
+  .mobile-navbar-btn {
+    display: block;
+    z-index: 999;
+  }
+
+  .mobile-navbar-icon {
+    font-size: 10vw;
+ }
+
+
+  .active .nav-bar {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+
+.active .mobile-navbar-btn .fa-x {
+    display: block;
+}
+
+.active .mobile-navbar-btn .fa-bars {
+    display: none;
+}
+
+
+
+  @media (max-width: 361px) {
+    .header {
+        height: 17vh;
+    }
+ }
+}
