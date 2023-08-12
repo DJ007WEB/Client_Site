@@ -5,7 +5,7 @@ const header = document.querySelector(".header");
 
 
 const toggleNavBar = () => {
-    header.classList.toggle("active")
+    header.classList.toggle("active");
 }
 
 
